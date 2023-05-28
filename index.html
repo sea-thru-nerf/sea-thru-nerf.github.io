@@ -251,7 +251,17 @@
 
 	</div>
 
-
+	<div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Additional Results
+                </h3>
+                <div class="video-compare-container">
+                    <video class="video" id="musclecar" loop playsinline autoPlay muted src="videos/outputSideBySide.mp4" onplay="resizeAndPlay(this)"></video>
+                    <canvas height=0 class="videoMerge" id="musclecarMerge"></canvas>
+                </div>
+			</div>
+        </div>
 
 <script>
     document.onkeydown = keyHandler;
