@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--    https://www.w3schools.com/tags/tag_meta.asp-->
     <meta charset="utf-8">
     <meta name="description" content="SeaThru-NeRF: Neural Radiance Fields in Scattering Media">
     <meta name="keywords" content="SeaThru-NeRF, underwater image rendering, underwater image reconstruction, NeRF, CVPR">
@@ -33,7 +32,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/codemirror.min.css">
-    <link rel="stylesheet" href="css/app.css">	
+    <link rel="stylesheet" href="css/app.css"> 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -45,12 +44,31 @@
     <script src="js/codemirror.min.js"></script>
     <script src="js/clipboard.min.js"></script>
     <script src="js/video_comparison.js"></script>
-    <script src="js/app.js"></script>	
-    <!--    <script src='./static/js/jquery.elevatezoom.js'></script>-->
+    <script src="js/app.js"></script> 
     <link rel="shortcut icon" href="./images/lab_icon.png" type="image/png"/>
+
+    <style>
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .video-compare-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .linked-author {
+            color: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-
 
 <section class="hero">
     <div class="hero-body">
@@ -74,16 +92,15 @@
                        <span class="author-block">
                           Derya Akkaynak<sup>1</sup><sup>3</sup>,
                        </span>
-			
-			
+          
                         <span class="author-block">
-			  <div class="is-size-3 author-block">
-                          <a href="http://www.cs.haifa.ac.il/~skorman/">Simon Korman</a><sup>2</sup>,
-                        </span>
+                          <div class="is-size-3 author-block">
+                          <a class="linked-author" href="http://www.cs.haifa.ac.il/~skorman/">Simon Korman</a><sup>2</sup>,
+                          </span>
                       <span class="author-block">
-                          <a href="https://www.viseaon.haifa.ac.il/">Tali Treibitz</a><sup>1</sup>,
+                          <a class="linked-author" href="https://www.viseaon.haifa.ac.il/">Tali Treibitz</a><sup>1</sup>,
                         </span>
-		        </div>
+            </div>
                     </div>
                     <div class="is-size-5 publication-authors">
                         <span class="institution-block">
@@ -98,243 +115,147 @@
                               <br>Israel
                           </span>
                         </span>
-                        <!--            <span class="institution-block">-->
-                        <!--              <div class="instit">University of Haifa, Israel</div>-->
-                        <!--            </span>-->
                     </div>
                     <h1 style="font-size:24px;font-weight:bold">CVPR 2023</h1>
                     <div class="column has-text-centered">
-                        <div class="publication-links">
-                            <!-- PDF Link. -->
-                                <!--        <span class="link-block">
-                                          <a href="static/paper.pdf"
-                                             class="external-link button is-normal is-rounded is-dark">
-                                            <span class="icon">
-                                                <i class="fas fa-file-pdf"></i>
-                                            </span>
-                                            <span>Paper</span>
-                                          </a>
-                                        </span> -->
-                             <span class="link-block">
-                            <a href="https://arxiv.org/abs/2304.07743"
-                               class="external-link button is-normal is-rounded is-dark">
-                              <span class="icon">
-                                  <i class="ai ai-arxiv is-size-4"></i>
-                              </span>
-                              <span>Paper</span>
-                            </a>
-                          </span> 
-                            <!-- supp PDF Link. -->
-                            <!--               <span class="link-block">
-                                            <a href="static/supp.pdf"
-                                               class="external-link button is-normal is-rounded is-dark">
-                                              <span class="icon">
-                                                  <i class="fas fa-file-pdf"></i>
-                                              </span>
-                                              <span>Supp</span>
-                                            </a>
-                                          </span> -->
-<!--                             Video Link. -->
+                        <div class="publication-links" style="display: flex; align-items: center; justify-content: center;">
+                            <!-- PDF Link -->
                             <span class="link-block">
-                              <a href="https://www.youtube.com/watch?v=oRMvTBBARKE"
-                                 class="external-link button is-normal is-rounded is-dark">
-                                <span class="icon">
-                                    <i class="fab fa-youtube"></i>
-                                </span>
-                                <span>Video</span>
-                              </a>
+                                <a href="https://arxiv.org/abs/2304.07743"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="ai ai-arxiv is-size-4"></i>
+                                  </span>
+                                  <span>Paper</span>
+                                </a>
+                            </span>
+                            <!-- Video Link -->
+                            <span class="link-block">
+                                <a href="https://www.youtube.com/watch?v=oRMvTBBARKE"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="fab fa-youtube"></i>
+                                  </span>
+                                  <span>Video</span>
+                                </a>
                             </span>
                            
-                            <!-- Code Link. -->
+                            <!-- Code Link -->
                             <span class="link-block">
-                               
-                             <!--   <a href="https://github.com/NaamaPearl/nan"
-                               class="external-link button is-normal is-rounded is-dark">-->
-            <!--                   class="external-link button is-normal is-rounded is-dark">-->
-                              <span class="icon">
-                                  <i class="fab fa-github  is-size-4"></i>
-                              </span>
-                              <span>Code - Coming soon</span>
-                                 
-                              </a>
-                          </span>
+                                <button class="button is-normal is-rounded is-dark" disabled>
+                                  <span class="icon">
+                                      <i class="fab fa-github is-size-4"></i>
+                                  </span>
+                                  <span>Code - Coming soon</span>
+                                </button>
+                            </span>
                         </div>
-                <!--     </div>
-                    <img class="img-teaser" src="figures/teaser.png">
-                </div>-->
+                    </div>
             </div>
         </div>
     </div>
 </section>
 
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-		<div class="column has-text-centered">
-                   <h3>
-                    Underwater Image Novel Views Rendering
-                   </h3>
-                   <div class="video-compare-container" id="materialsDiv">
-                      <video class="video" id="materials" loop playsinline autoPlay muted src="videos/uw.mp4" onplay="resizeAndPlay(this)"></video>
-                    
-                      <canvas height=0 class="videoMerge" id="materialsMerge"></canvas>
-                   </div>
-			</div>
-        </div>    
-    
-    
-    
-	  <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-	      <div class="column has-text-centered">
-                <h3>
-                    Underwater Image Restoration
-                </h3>
-                <div class="video-compare-container">
-                    <video class="video" id="musclecar" loop playsinline autoPlay muted src="videos/outputnowater.mp4" onplay="resizeAndPlay(this)"></video>
-                    <canvas height=0 class="videoMerge" id="musclecarMerge"></canvas>
-                </div>
-			</div>
+<div class="container">
+    <div class="centered">
+        <h3>
+            Underwater Image Novel Views Rendering
+        </h3>
+        <div class="video-compare-container" id="materialsDiv">
+            <video class="video" id="materials" loop playsinline autoplay muted src="videos/uw.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas height=0 class="videoMerge" id="materialsMerge"></canvas>
         </div>
-    
-    
-     <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Abstract
-                </h3>
-                <p class="text-justify">
- 			Research on neural radiance fields (NeRFs) for novel
-                        view generation is exploding with new models and exten-
-                        sions. However, a question that remains unanswered is what
-                        happens in underwater or foggy scenes where the medium
-                        strongly influences the appearance of objects. Thus far,
-                        NeRF and its variants have ignored these cases. However,
-                        since the NeRF framework is based on volumetric render-
-                        ing, it has inherent capability to account for the medium’s
-                        effects, once modeled appropriately. We develop a new ren-
-                        dering model for NeRFs in scattering media, which is based
-                        on the SeaThru image formation model, and suggest a suit-
-                        able architecture for learning both scene information and
-                        medium parameters. We demonstrate the strength of our
-                        method using simulated and real-world scenes, correctly
-                        rendering novel photorealistic views underwater. Even
-                        more excitingly, we can render clear views of these scenes,
-                        removing the medium between the camera and the scene
-                        and reconstructing the appearance and depth of far objects,
-                        which are severely occluded by the medium.               
-		</p>
-            </div>
+    </div>
+    <div class="centered">
+        <h3>
+            Underwater Image Restoration
+        </h3>
+        <div class="video-compare-container">
+            <video class="video" id="musclecar" loop playsinline autoplay muted src="videos/outputnowater.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas height=0 class="videoMerge" id="musclecarMerge"></canvas>
         </div>
-		  
-	<div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Underwater Image Formation Model
-                </h3>
-		<image src="figures/SeaThru-NeRF_seminar_updated_image.gif" class="img-responsive" alt="overview" width="40%" height="40%" style="margin:auto;">
+    </div>
 
-	</div>  
-		  
-	<div class="col-md-8 col-md-offset-2">
-                <h3>
-                    SeaThru-NeRF: Medium Aware Rendering
-                </h3>
-		<image src="figures/SeaThru-NeRF_seminar_updated.gif" class="img-responsive" alt="overview" width="20%" height="20%" style="margin:auto;">
-
-	</div>
-	  
-		  
-	<div class="col-md-8 col-md-offset-2">
-                <h3>
-                    SeaThru-NeRF Architecture
-                </h3>
-		<image src="figures/architecture.png" class="img-responsive" alt="overview"  width="5%" height="5%" style="margin:auto;">
-
-	</div>
-		<div class="row">
-            		<div class="col-md-8 col-md-offset-2">
-	      			<div class="column has-text-centered">
-                		<h3>
-                    		Additional Results - Color Restoration
-                		</h3>
-                	<div class="video-compare-container">
-                    <video class="video" id="JG" loop playsinline autoPlay muted src="videos/outputSideBySide.mp4" onplay="resizeAndPlay(this)"></video>
-                    <canvas height=0 class="videoMerge" id="JGMerge"></canvas>
-                </div>
-			</div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Abstract
+            </h3>
+            <p class="text-justify">
+                Research on neural radiance fields (NeRFs) for novel view generation is exploding with new models and extensions.
+                However, a question that remains unanswered is what happens in underwater or foggy scenes where the medium strongly influences the appearance of objects.
+                Thus far, NeRF and its variants have ignored these cases.
+                However, since the NeRF framework is based on volumetric rendering, it has inherent capability to account for the medium’s effects, once modeled appropriately.
+                We develop a new rendering model for NeRFs in scattering media, which is based on the SeaThru image formation model, and suggest a suitable architecture for learning both scene information and medium parameters.
+                We demonstrate the strength of our method using simulated and real-world scenes, correctly rendering novel photorealistic views underwater.
+                Even more excitingly, we can render clear views of these scenes, removing the medium between the camera and the scene and reconstructing the appearance and depth of far objects, which are severely occluded by the medium.
+        </p>
         </div>
-			
-			
-			
-				<div class="row">
-            		<div class="col-md-8 col-md-offset-2">
-	      			<div class="column has-text-centered">
-                		<h3>
-                    		Additional Results - Novel Views
-                		</h3>
-                	<div class="video-compare-container">
-                    <video class="video" id="JGColor" loop playsinline autoPlay muted src="videos/outputColor.mp4" onplay="resizeAndPlay(this)"></video>
-                    <canvas height=0 class="videoMerge" id="JGColorMerge"></canvas>
-                </div>
-			</div>
-        </div>	
-					
-		
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+        <h3>
+            Underwater Image Formation Model
+        </h3>
+        <img src="figures/SeaThru-NeRF_seminar_updated_image.gif" class="img-responsive" alt="overview" width="40%" height="40%" style="margin:auto;">
+    </div>  
+
+    <div class="col-md-8 col-md-offset-2">
+        <h3>
+            SeaThru-NeRF: Medium Aware Rendering
+        </h3>
+        <img src="figures/SeaThru-NeRF_seminar_updated.gif" class="img-responsive" alt="overview" width="20%" height="20%" style="margin:auto;">
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+        <h3>
+            SeaThru-NeRF Architecture
+        </h3>
+        <img src="figures/architecture.png" class="img-responsive" alt="overview"  width="5%" height="5%" style="margin:auto;">
+    </div>
 </div>
+
+
+<div class="centered">
+    <h3>
+        Additional Results - Color Restoration
+    </h3>
+    <div class="video-compare-container">
+        <video class="video" id="JG" loop playsinline autoPlay muted src="videos/outputSideBySide.mp4" onplay="resizeAndPlay(this)"></video>
+        <canvas height=0 class="videoMerge" id="JGMerge"></canvas>
+    </div>
+</div>
+
+<div class="centered">
+    <h3>
+        Additional Results - Novel Views
+    </h3>
+    <div class="video-compare-container">
+        <video class="video" id="JGColor" loop playsinline autoPlay muted src="videos/outputColor.mp4" onplay="resizeAndPlay(this)"></video>
+        <canvas height=0 class="videoMerge" id="JGColorMerge"></canvas>
+    </div>
+</div>
+
+
+
 <script>
     document.onkeydown = keyHandler;
 </script>
 
 
- <!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
     <div class="container content">
-        <!--  <h2 class="title">BibTeX</h2>
-        <pre><code>
-      @inproceedings{pearl2022noiseaware,
-        title={NAN: Noise-Aware NeRFs for Burst-Denoising},
-        author={Pearl, Naama and Treibitz, Tali and Korman, Simon},
-        booktitle=CVPR,
-        year={2022}
-      }
-</code></pre> -->
     </div>
 </section>
-
 
 <section class="section" id="refrences">
     <div class="container content">
         <div class="columns">
             <div class="column">
-              <!--  <h1 class="title">References</h1>
-                <ol  class="citation-list">
-                    <li class="citation-item"><a class="citation" id="bpn">Xia, Zhihao, et al.
-                        "Basis prediction networks for effective burst denoising with large kernels."
-                        <i>In Proc. IEEE CVPR</i>, 2020. </a></li>
-                    <li class="citation-item"><a class="citation" id="deeprep">Bhat, Goutam, et al.
-                        "Deep reparametrization of multi-frame super-resolution and denoising."
-                        <i>In Proc. IEEE ICCV</i>, 2021. </a></li>
-                    <li class="citation-item"><a class="citation" id="ibrnet">Wang, Qianqian, et al.
-                        "Ibrnet: Learning multi-view image-based rendering."
-                        <i>In Proc. IEEE CVPR</i>, 2021. </a></li>
-                    <li class="citation-item"><a class="citation" id="llff">Mildenhall, Ben, et al.
-                        "Local light field fusion: Practical view synthesis with prescriptive sampling guidelines."
-                        <i>ACM Transactions on Graphics</i>, 2019. </a></li>
-                    <li class="citation-item"><a class="citation" id="nerf">Mildenhall, Ben, et al.
-                        "Nerf: Representing scenes as neural radiance fields for view synthesis."
-                        <i>In ECCV</i>, 2020. </a></li>
-                    <li class="citation-item"><a class="citation" id="hdr">
-                        Hasinoff, Samuel W., et al.
-                        "Burst photography for high dynamic range and low-light imaging on mobile cameras."
-                        <i>ACM Transactions on Graphics</i>, 2016. </a></li>
-                    <li class="citation-item"><a class="citation" id="hdrimp">
-                        Monod, Antoine, et al.
-                        "An Analysis and Implementation of the HDR+ Burst Denoising Method."
-                        <i>Image Processing On Line</i>, 2021. </a></li>
-                </ol> -->
             </div>
         </div>
     </div>
 </section>
-
 
 <footer class="footer">
     <div class="container">
@@ -346,7 +267,7 @@
                 <br>
             </div>
         </div>
-    </div>-->
+    </div>
 </footer> 
 
 </body>
