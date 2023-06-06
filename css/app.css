@@ -215,9 +215,9 @@ span.highlight {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px; /* Optional: Add margin around each section */
+    margin-top: 10px; /* Optional: Add margin around each section */
 }
 
 .sectionCol:first-child {
-    margin-right: 20px; /* Optional: Add margin between the sections */
+    margin-right: 10px; /* Optional: Add margin between the sections */
 }
