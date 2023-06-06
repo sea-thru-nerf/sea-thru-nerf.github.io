@@ -205,9 +205,18 @@ span.highlight {
 }
 .containerCol {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Optional: Set a specific height for the parent container */
+    height: 100vh;
+}
+
+.column {
+    margin-bottom: 20px;
+}
+
+.title {
+    text-align: center;
 }
 
 .sectionCol {
@@ -215,12 +224,5 @@ span.highlight {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10px; /* Optional: Add margin around each section */
-}
-
-.sectionCol:first-child {
-    margin-right: 10px; /* Optional: Add margin between the sections */
-}
-.column {
-    margin-bottom: 5px; /* Adjust margin between the title and the container */
+    margin-top: 20px;
 }
