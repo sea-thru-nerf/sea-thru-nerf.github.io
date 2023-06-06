@@ -204,11 +204,20 @@ span.highlight {
     display:block;
 }
 .containerCol {
-    display: flex; /* Display the sections in a row */
-    justify-content: space-between; /* Add space between the sections */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Optional: Set a specific height for the parent container */
 }
 
 .sectionCol {
-    flex: 1; /* Allow the sections to grow and shrink */
-    margin-right: 20px; /* Add a margin between the sections */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px; /* Optional: Add margin around each section */
+}
+
+.sectionCol:first-child {
+    margin-right: 20px; /* Optional: Add margin between the sections */
 }
