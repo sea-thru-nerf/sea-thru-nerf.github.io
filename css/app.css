@@ -203,3 +203,12 @@ span.highlight {
     overflow:hidden;
     display:block;
 }
+.containerCol {
+    display: flex; /* Display the sections in a row */
+    justify-content: space-between; /* Add space between the sections */
+}
+
+.sectionCol {
+    flex: 1; /* Allow the sections to grow and shrink */
+    margin-right: 20px; /* Add a margin between the sections */
+}
