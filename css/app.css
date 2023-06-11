@@ -208,6 +208,7 @@ span.highlight {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 5px;
     height: 100vh;
 }
 
@@ -218,6 +219,7 @@ span.highlight {
 
 .row {
     display: flex;
+    margin-top: 10px;
 }
 
 .title {
@@ -230,7 +232,7 @@ span.highlight {
 
 .sectionCol {
     flex: 1;
-    padding: 0 10px;
+    padding: 0 5px;
     display: 1;
     flex-direction: column;
     align-items: center;
