@@ -219,10 +219,16 @@ span.highlight {
     text-align: center;
 }
 
-.sectionCol {
+.containerRow {
     display: flex;
+}
+
+.sectionCol {
+    display: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
 }
+
+
