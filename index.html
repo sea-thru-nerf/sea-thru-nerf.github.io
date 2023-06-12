@@ -80,8 +80,16 @@
         }  
 
         .video-container {
-            flex: 3 1 calc(50% - 40px);
+            flex: 1 1 calc(33.333% - 40px); /* Adjust the 33.333% to fit 3 video containers in a row */
         }
+        .video-title {
+            text-align: center;
+            color: #4a4a4a;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -247,15 +255,19 @@
 </div>
 <div class="video-row">
     <div class="video-container">
+        <h4 class="video-title">Japanese Gardens</h4>
         <video class="video" id="JG" loop playsinline autoplay muted src="videos/outputSideBySide.mp4" onplay="resizeAndPlay(this)"></video>
         <canvas height=0 class="videoMerge" id="JGMerge"></canvas>
     </div>
     <div class="video-container">
+        <h4 class="video-title">IUI3</h4>
         <video class="video" id="IUI" loop playsinline autoplay muted src="videos/outputSidebySideIUI3.mp4" onplay="resizeAndPlay(this)"></video>
         <canvas height=0 class="videoMerge" id="IUIMerge"></canvas>
     </div>
+    <!-- Add the new video container here -->
     <div class="video-container">
-        <video class="video" id="panama" loop playsinline autoplay muted src="videos/outputSidebySidePanama.mp4" onplay="resizeAndPlay(this)"></video>
+        <h4 class="video-title">Panama</h4>
+        <video class="video" id="Panama" loop playsinline autoplay muted src="videos/outputSidebySidePanama.mp4" onplay="resizeAndPlay(this)"></video>
         <canvas height=0 class="videoMerge" id="PanamaMerge"></canvas>
     </div>
 </div>
